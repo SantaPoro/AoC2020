@@ -9,4 +9,4 @@ readInt :: String -> Int
 readInt = read
 
 solution :: [Int] -> Int
-solution xs = foldl (*) 1 $ head $ filter (\x -> foldl (+) 0 x == 2020) [[x, y, z] | x <- xs, y <- xs, z <- xs]
+solution xs = product $ head $ filter (\x -> sum x == 2020) [[x, y, z] | x <- xs, y <- xs, z <- xs]
